@@ -1,0 +1,53 @@
+package com.example.exerciciomobile_03
+
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.sp
+import com.example.exerciciomobile_03.ui.theme.ExercicioMobile03Theme
+
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContent {
+            ExercicioMobile03Theme {
+                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                    ComponentesIdade(
+                        modifier = Modifier.padding(innerPadding)
+                    )
+                }
+            }
+        }
+    }
+}
+@Composable
+fun ComponentesIdade(modifier: Modifier = Modifier){
+
+    Column(
+        modifier = modifier.fillMaxSize()
+    ) {
+
+        Row() {
+
+            Text(
+                text = "Qual a sua idade?",
+                fontSize = 25.sp,
+                modifier = Modifier.fillMaxWidth(),
+                textAlign = TextAlign.Center,
+
+            )
+        }
+    }
+}
